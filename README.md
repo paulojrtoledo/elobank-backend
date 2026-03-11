@@ -1,93 +1,93 @@
 # Elo Bank 💳
 
-**Elo Bank** é uma plataforma bancária digital em desenvolvimento, criada com foco em **segurança**, **escalabilidade** e **boas práticas de desenvolvimento**. O projeto simula um banco real, permitindo abertura de contas, transferências (PIX/TED), gerenciamento de chaves Pix e autenticação segura.
+**Elo Bank** is a digital banking platform under development, built with focus on **security**, **scalability** and **best practices**. The project simulates a real bank, allowing account opening, transfers (PIX/TED), Pix key management and secure authentication.
 
-> 🚧 **Status do Projeto:** Em desenvolvimento ativo (Fase 1 concluída)
-
----
-
-## 🎯 Objetivo do Projeto
-
-Construir uma aplicação full stack do zero que demonstre:
-
-- Domínio de **Java, Spring Boot e ecossistema**
-- Aplicação prática de **cibersegurança** em um domínio crítico
-- Arquitetura limpa, concorrência e boas práticas
-- Capacidade de construir uma aplicação **full stack** (React futuramente)
+> 🚧 **Project Status:** Active development (Phase 1 completed)
 
 ---
 
-## 🚀 Tecnologias (em uso)
+## 🎯 Project Goal
+
+Build a full stack application from scratch that demonstrates:
+
+- Mastery of **Java, Spring Boot and ecosystem**
+- Practical application of **cybersecurity** in a critical domain
+- Clean architecture, concurrency and best practices
+- Ability to build a **full stack** application (React in the future)
+
+---
+
+## 🚀 Technologies (in use)
 
 ### Backend
 - **Java 17+**
 - **Spring Boot** (Web, Data JPA, Security, Validation)
-- **JWT** para autenticação
-- **JPA / Hibernate** com PostgreSQL
+- **JWT** for authentication
+- **JPA / Hibernate** with PostgreSQL
 - **Maven**
 - **Lombok**
 - **Bean Validation**
 
-### Ferramentas
+### Tools
 - **PostgreSQL** + **pgAdmin**
-- **Git** e **GitHub**
+- **Git** and **GitHub**
 
 ---
 
-## ✅ Fase 1 - Modelagem de Domínio (Concluída)
+## ✅ Phase 1 - Domain Modeling (Completed)
 
-| Entidade | Descrição |
-|----------|-----------|
-| **Customer** | Cliente do banco (PF) com CPF, email, status |
-| **Account** | Conta bancária (corrente/poupança) |
-| **Transaction** | Transferências PIX, TED e débito |
-| **PixKey** | Chaves Pix (CPF, email, telefone, aleatória) |
-| **LoginAudit** | Auditoria de tentativas de login |
+| Entity | Description |
+|--------|-------------|
+| **Customer** | Bank customer (individual) with CPF, email, status |
+| **Account** | Bank account (checking/savings) |
+| **Transaction** | PIX, TED and debit transfers |
+| **PixKey** | Pix keys (CPF, email, phone, random) |
+| **LoginAudit** | Login attempts audit |
 
-### Conceitos aplicados:
-- ✅ Relacionamentos JPA (`@OneToMany`, `@ManyToOne`)
+### Applied concepts:
+- ✅ JPA relationships (`@OneToMany`, `@ManyToOne`)
 - ✅ Bean Validation (`@NotNull`, `@Email`, `@Positive`)
-- ✅ Índices estratégicos (`cpf`, `accountNumber`, `keyValue`)
-- ✅ Enums com `@Enumerated(EnumType.STRING)`
-- ✅ Encapsulamento com métodos de negócio (`block()`, `activate()`)
+- ✅ Strategic indexes (`cpf`, `accountNumber`, `keyValue`)
+- ✅ Enums with `@Enumerated(EnumType.STRING)`
+- ✅ Encapsulation with business methods (`block()`, `activate()`)
 
 ---
 
-## 🗺️ Próximas etapas (Fase 2)
+## 🗺️ Next steps (Phase 2)
 
-- Implementação de **repositórios e consultas**
-- Resolução do problema **N+1** com `JOIN FETCH`
-- Criação dos **DTOs** e **services**
-- Implementação de **Spring Security** + **JWT**
-- Cache de sessões com `ConcurrentHashMap`
+- Implement **repositories and queries**
+- Solve **N+1 problem** with `JOIN FETCH`
+- Create **DTOs** and **services**
+- Implement **Spring Security** + **JWT**
+- Session cache with `ConcurrentHashMap`
 
 ---
 
-## 📦 Como executar localmente
+## 📦 How to run locally
 
 ```bash
-# Clone o repositório
+# Clone the repository
 git clone https://github.com/paulojrtoledo/elo-bank-backend.git
 
-# Acesse a pasta
+# Access the folder
 cd elo-bank-backend
 
-# Configure as variáveis de ambiente (PostgreSQL)
+# Configure environment variables (PostgreSQL)
 # DB_EB_URL, DB_EB_USERNAME, DB_EB_PASSWORD
 
-# Execute com Maven
+# Run with Maven
 ./mvnw spring-boot:run
 ```
 
 ---
 
-## 📌 Autor
+## 📌 Author
 
 **Paulo Emilio de Toledo Jr**  
 [LinkedIn](https://www.linkedin.com/in/pauloemilio-tech) | [GitHub](https://github.com/paulojrtoledo)
 
 ---
 
-## 📝 Licença
+## 📝 License
 
-Este projeto é desenvolvido para fins de estudo e portfólio.
+This project is developed for study and portfolio purposes.
