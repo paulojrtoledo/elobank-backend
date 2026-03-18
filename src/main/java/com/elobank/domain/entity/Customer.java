@@ -5,12 +5,14 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import java.time.LocalDate;
 import java.util.List;
 
 @Entity
 @Getter
+@NoArgsConstructor
 @Table(name = "customer",
     indexes = {
         @Index(name = "idx_customer_cpf", columnList = "cpf"),
@@ -31,9 +33,11 @@ public class Customer {
     @OneToMany(mappedBy = "customer")
     private List<Account> accounts;
 
-    public Customer(String name, String cpf) {
+
+    public Customer(String name, String cpf, String email) {
         this.name = name;
         this.cpf = cpf;
+        this.email = email;
         this.registrationDate = LocalDate.now();
         this.status = CustomerStatus.ACTIVE;
     }

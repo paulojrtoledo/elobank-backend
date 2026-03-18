@@ -3,10 +3,12 @@ package com.elobank.domain.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
 @Entity
+@NoArgsConstructor
 @Table(name = "pixKey",
     indexes = {
         @Index(name = "idx_pix_value_key_value", columnList = "key_value"),
@@ -23,9 +25,10 @@ public class PixKey {
     @NotNull @Getter @ManyToOne private Account account;
     @NotNull @Getter private LocalDate createdAt;
 
-    public PixKey(KeyType keyType, String keyValue) {
+    public PixKey(KeyType keyType, String keyValue, Account account) {
         this.keyType = keyType;
         this.keyValue = keyValue;
+        this.account = account;
         this.createdAt = LocalDate.now();
     }
 }

@@ -5,11 +5,13 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.PositiveOrZero;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
 
 @Entity
+@NoArgsConstructor
 @Table(name = "account",
     indexes = {
         @Index(name = "idx_account_account_number", columnList = "account_number")

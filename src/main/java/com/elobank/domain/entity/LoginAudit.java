@@ -3,16 +3,18 @@ package com.elobank.domain.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Entity
+@NoArgsConstructor
 @Table(name = "loginAudit")
 public class LoginAudit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotNull @Getter private Customer customer;
+    @NotNull @Getter @ManyToOne private Customer customer;
     @NotNull @Getter private LocalDateTime timestamp;
     @NotNull private String ip;
     private boolean success;

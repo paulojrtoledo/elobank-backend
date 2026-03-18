@@ -4,10 +4,12 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Entity
+@NoArgsConstructor
 @Table(name = "transaction",
     indexes = {
         @Index(name = "idx_transaction_source_account", columnList = "source_account_id"),
