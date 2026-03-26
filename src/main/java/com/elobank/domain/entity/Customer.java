@@ -26,6 +26,7 @@ public class Customer {
     @NotNull
     @Size(min = 11, max = 11)
     @Column(unique = true, nullable = false) private String cpf;
+    @NotNull private String passwordHash;
     @Email @NotNull @Setter private String email;
     @Setter private String phone;
     private LocalDate registrationDate;
@@ -34,9 +35,10 @@ public class Customer {
     private List<Account> accounts;
 
 
-    public Customer(String name, String cpf, String email) {
+    public Customer(String name, String cpf, String passwordHash, String email) {
         this.name = name;
         this.cpf = cpf;
+        this.passwordHash = passwordHash;
         this.email = email;
         this.registrationDate = LocalDate.now();
         this.status = CustomerStatus.ACTIVE;
